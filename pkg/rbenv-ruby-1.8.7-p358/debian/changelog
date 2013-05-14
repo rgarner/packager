@@ -1,0 +1,5 @@
+rbenv-ruby-1.8.7-p358 (1-ppa1~precise1) precise; urgency=low
+
+  * Initial build for Precise.
+
+ -- Dan Carley <dan.carley@gmail.com>  Mon, 13 May 2013 17:19:14 +0000
