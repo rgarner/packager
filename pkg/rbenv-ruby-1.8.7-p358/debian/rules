@@ -13,6 +13,6 @@ override_dh_auto_configure:
 override_dh_auto_install:
 	dh_auto_install
 	cd rubygems && \
-		export RUBYLIB="$(DESTDIR)$(DESTREAL)/lib/ruby/1.8:$(DESTDIR)$(DESTREAL)/lib/ruby/1.8/x86_64-linux/" && \
+		export RUBYLIB="$(shell ./miniruby -e 'puts $:.map { |path| File.join("$(DESTDIR)$(DESTREAL)", path) }.join(":")')" && \
 		../miniruby setup.rb
 	sed -ri 's|^#!.*($(DESTREAL)/bin/ruby)$$|#!\1|' $(DESTDIR)$(DESTREAL)/bin/gem
